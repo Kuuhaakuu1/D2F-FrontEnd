@@ -1,0 +1,18 @@
+<header class="main-container">
+    <div class="header-2">
+      <div class="header-3">
+        <img loading="lazy" srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5101cd168ea05bdcfdcc1c731d417735d2dd5e7594ad4ca2fa385d249f00cd8b?apiKey=68351ece0ff9473aba513224bb2a49a4&"class="image" />
+        <div class="header-4">D2F</div>
+    </div>
+    <div class="header-links">
+      <a href="/">Home</a>
+      <a href="/features">Features</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+  </div>
+  <div class="upload-button-container">
+    <button class="upload-button" (click)="selectFile()">UPLOAD A FILE</button>
+    <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+  </div>
+</header>
