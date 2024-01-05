@@ -1,0 +1,87 @@
+/* Updated CSS for the navbar */
+
+.header-2 {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .header-3 {
+    display: flex;
+    align-items: center; /* Align logo and text vertically */
+  }
+  
+  .image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  .header-4 {
+    color: #000;
+    font: italic 900 36px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    margin-left: 10px;
+  }
+  
+  .header-links {
+    margin-left: auto; /* Push links to the right */
+    display: flex;
+  }
+  
+  .header-links a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  /* Updated CSS for the button */
+  
+  .upload-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the button vertically */
+    margin-top: 20px;
+  }
+  
+  .upload-button {
+    color: #fff;
+    background-color: #3a5aff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font: 700 16px Montserrat, sans-serif;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the button */
+  .upload-button:hover {
+    background-color: #304fc7;
+  }
+  
+  @media (max-width: 991px) {
+    .header-2 {
+      flex-wrap: wrap;
+    }
+  
+    .header-4 {
+      font-size: 24px;
+    }
+  
+    .header-5 {
+      font-size: 14px;
+    }
+  
+    .upload-button-container {
+      margin-top: 10px;
+    }
+  
+    .upload-button {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  }
+  
