@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'; // Make sure to include this line
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IdCardFormComponent } from './id-card-form/id-card-form.component';
@@ -13,12 +13,14 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
     AppComponent,
     IdCardFormComponent,
     LandingPageComponent,
-    UploadPageComponent
+    UploadPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [
     provideClientHydration()

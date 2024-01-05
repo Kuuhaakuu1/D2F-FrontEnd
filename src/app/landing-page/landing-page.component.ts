@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  RestapiService } from '../service/restapi.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-
+ 
 }
