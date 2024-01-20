@@ -1,10 +1,12 @@
 version: '3.3'
 
 services:
+  
   web:
     build:
       context: .
       dockerfile: Dockerfile
+      
     volumes:
       - .:/app
       - /app/node_modules   # Exclude node_modules from being mounted
@@ -13,3 +15,5 @@ services:
     environment:
       - DEBUG=1
     restart: always
+
+  

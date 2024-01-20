@@ -3,11 +3,16 @@ FROM node:20.10.0 as builder
 
 WORKDIR /app
 
+
+
 # Copy only the package files to leverage Docker caching during development
 COPY package*.json ./
 
+
 # Install dependencies
 RUN npm ci
+
+
 # Copy the rest of the application files
 COPY . .
 
