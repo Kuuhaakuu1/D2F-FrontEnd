@@ -21,7 +21,7 @@ export class IdCardFormComponent implements OnInit{
   };
   givenNames!: any;
   dateOfBirth!: any;
-  dlClass!: any;
+  dlClass = "is not set";
   documentNumber!: any;
   firstIssueDate!: any;
   issuingStateCode!: any;
@@ -30,14 +30,14 @@ export class IdCardFormComponent implements OnInit{
   placeOfBirth!: any;
   surname!: any;
   dateOfExpiry!: any;
-
+  selectedIdType: string = '';
   ngOnInit() {
     // Retrieve the OCR data from the query parameters
     this.route.queryParams.subscribe((params) => {
       const ocrData = params['givenNames'];
       this.givenNames = params['givenNames'];
       this.dateOfBirth = params['dateOfBirth'];
-      this.dlClass = params['dlClass'];
+      this.dlClass = params['dlClass']!= null ? params['dlClass']: this.dlClass;
       this.documentNumber = params['documentNumber'];
       this.firstIssueDate = params['firstIssueDate'];
       this.issuingStateCode = params['issuingStateCode'];
@@ -52,11 +52,21 @@ export class IdCardFormComponent implements OnInit{
   
       // You can now use ocrData in your component logic
     });
+
+    if (this.dlClass !=  "is not set") {
+      console.log( "ach had chi daba wach kitprinta wla la" + this.dlClass);
+      this.selectedIdType = 'DriverLicense';
+    }
+    else {
+      console.log(this.dlClass);
+      this.selectedIdType = 'idCard';
+    }
   }
-  selectedIdType: string = ''; // Initialize to an empty string
+   // Initialize to an empty string
   
 
   onIdTypeChange() {
+    
     // Reset the form data based on the selected ID type
     if (this.selectedIdType === 'idCard') {
       this.formData = {

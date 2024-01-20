@@ -1,18 +1,37 @@
 <div>
-    <label for="idType">Select ID Type:</label>
-    <select id="idType" [(ngModel)]="selectedIdType" (change)="onIdTypeChange()">
-      <option value="">Select an option</option>
-      <option value="idCard">ID Card</option>
-      <!-- <option value="studentCard">Student Card</option> -->
-    </select>
-  </div>
+  <label for="idType">Select ID Type:</label>
+  <select id="idType" [(ngModel)]="selectedIdType" (change)="onIdTypeChange()" [disabled]="true">
+    <option value="">Select an option</option>
+    <option value="idCard">ID Card</option>
+    <option value="DriverLicense">Driver Lisence</option>
+    <!-- <option value="studentCard">Student Card</option> -->
+  </select>
+</div>
+
   
   <!-- Display the form only when an option is selected -->
   <div *ngIf="selectedIdType">
     <h2 *ngIf="selectedIdType === 'idCard'">ID Card Form</h2>
-    <h2 *ngIf="selectedIdType === 'studentCard'">Student Card Form</h2>
+    <h2 *ngIf="selectedIdType === 'DriverLicense'">Driver  Card Form</h2>
   
-    <form (ngSubmit)="onSubmit()" *ngIf="selectedIdType === 'idCard' || selectedIdType === 'studentCard'">
+    <form (ngSubmit)="onSubmit()" *ngIf="selectedIdType === 'idCard' || selectedIdType === 'DriverLicense'">
+     
+      <div class="form-group">
+        <label for="socialNumber">Document Number:</label>
+        <input type="text" id="socialNumber" name="socialNumber" [(ngModel)]="documentNumber" />
+      </div>
+      <div class="form-group" *ngIf="selectedIdType === 'DriverLicense'">
+        <label for="dlClass">Driver license class:</label>
+        <input type="text" id="dlClass" name="dlClass" [(ngModel)]="dlClass" />
+      </div>
+      <div class="form-group" *ngIf="selectedIdType === 'DriverLicense'">
+        <label for="firstIssueDate">First Issue Date:</label>
+        <input type="text" id="firstIssueDate" name="firstIssueDate" [(ngModel)]="firstIssueDate" />
+      </div>
+      <div class="form-group" *ngIf="selectedIdType === 'idCard'">
+        <label for="fatherLastName">Date Of Expiry:</label>
+        <input type="text" id="fatherLastName" name="fatherLastName" [(ngModel)]="dateOfExpiry" />
+      </div>
       <div class="form-group">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName" [(ngModel)]="givenNames" />
@@ -22,10 +41,6 @@
         <input type="text" id="lastName" name="lastName" [(ngModel)]="surname" />
       </div>
       <div class="form-group">
-        <label for="socialNumber">Social Number:</label>
-        <input type="text" id="socialNumber" name="socialNumber" [(ngModel)]="documentNumber" />
-      </div>
-      <div class="form-group">
         <label for="address">Place Of Birth:</label>
         <input type="text" id="address" name="address" [(ngModel)]="placeOfBirth" />
       </div>
@@ -33,33 +48,15 @@
         <label for="fatherFirstName">Date Of Birth:</label>
         <input type="text" id="fatherFirstName" name="fatherFirstName" [(ngModel)]="dateOfBirth" />
       </div>
+      
   
       <!-- Enclose "Father's First Name" and "Father's Last Name" fields within this div -->
       <div *ngIf="selectedIdType === 'idCard'">
        
         
-        <div class="form-group">
-          <label for="fatherLastName">Date Of Expiry:</label>
-          <input type="text" id="fatherLastName" name="fatherLastName" [(ngModel)]="dateOfExpiry" />
-        </div>
+       
       </div>
       
-  
-      <!-- Additional fields for Student Card -->
-      <div *ngIf="selectedIdType === 'studentCard'">
-        <div class="form-group">
-          <label for="studentId">Student ID:</label>
-          <input type="text" id="studentId" name="studentId" [(ngModel)]="formData.studentId" />
-        </div>
-        <div class="form-group">
-          <label for="schoolName">School Name:</label>
-          <input type="text" id="schoolName" name="schoolName" [(ngModel)]="formData.schoolName" />
-        </div>
-        <div class="form-group">
-          <label for="yearOfStudies">Year of Studies:</label>
-          <input type="text" id="yearOfStudies" name="yearOfStudies" [(ngModel)]="formData.yearOfStudies" />
-        </div>
-      </div>
   
       <button type="submit">Confirm</button>
     </form>

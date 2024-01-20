@@ -12,6 +12,7 @@ export class UploadPageComponent {
   @ViewChild('fileInput') fileInput!: ElementRef;
   url!: string;
   result!: any;
+  termsAccepted = false;
   @Output() jsonReponse = new EventEmitter<any>();
 
   constructor(private restapiService: RestapiService,private router: Router) {}
