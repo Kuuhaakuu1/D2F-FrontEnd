@@ -8,9 +8,10 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'form', component: IdCardFormComponent },
   { path: 'upload', component: UploadPageComponent },
+  { path: '**', redirectTo: '' }
 
 ];
-
+// Single sign on
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
